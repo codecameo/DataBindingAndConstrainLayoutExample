@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Data Binding</string>
+
+    <string name="place_name_1">Whitehaven Beach – Australia</string>
+    <string name="place_description_1">Whitehaven Beach is known for its white sands. The Beach is a 7 km stretch along Whitsunday Island. The island is accessible by boat from the mainland tourist ports of Airlie Beach and Shute Harbour, as well as Hamilton Island. The Beach was named the top Eco Friendly Beach in the world by CNN.com. Dogs are not permitted on the beach and cigarette smoking is prohibited.</string>
+    <string name="place_url_1">http://www.wonderslist.com/wp-content/uploads/2013/01/Whitehaven-Beach_Australia.jpg</string>
+
+    <string name="place_name_2">The Fairy Pools on the Isle of Skye – Scotland</string>
+    <string name="place_description_2">If you are backpacking in Scotland generally or are planning a trip to the Isle of Skye then I heartily recommend that you visit the so-called Fairy Pools.The Fairy Pools is located in Cuillins Hills, Isle of Skye, Scotland. The Fairy Pools are a series of clear, cold pools and waterfalls formed as Allt Coir’ a’ Mhadaidh tumbles down from the foothills of the Black Cuillins into Glen Brittle.</string>
+    <string name="place_url_2">http://www.wonderslist.com/wp-content/uploads/2013/01/The-Fairy-Pools-on-the-Isle-of-Skye-Scotland.jpg</string>
+
+    <string name="place_name_3">The Shahara Bridge – Yemen</string>
+    <string name="place_description_3">This bridge was constructed in 17th century to connect towns at the tops of mountains in the state of Yemen. Shahara Bridge built to fight against Turkish invaders. It’s a scary bridge and a popular tourist attraction.</string>
+    <string name="place_url_3">http://www.wonderslist.com/wp-content/uploads/2013/01/The-Shahara-Bridge-Yemen.jpg</string>
+
+    <string name="place_name_4">Fjaðrárgljúfur Canyon – Iceland</string>
+    <string name="place_description_4">Fjaðrárgljúfur is a canyon in south east Iceland which is up to 100 m deep and about 2 kilometres long, with the Fjaðrá river flowing through it. It is located near the Ring Road, not far from the village of Kirkjubæjarklaustur.The canyon was created by progressive erosion by flowing water from glaciers through the rocks and palagonite over millennia.</string>
+    <string name="place_url_4">http://www.wonderslist.com/wp-content/uploads/2013/01/Fjaðrárgljúfur-canyon-Iceland-1.jpg</string>
+
+    <string name="place_name_5">The Dark Hedges – Northern Ireland</string>
+    <string name="place_description_5">This beautiful avenue of beech trees was planted by the Stuart family in the eighteenth century. The Dark Hedges is one of the most photographed natural phenomena in Northern Ireland and a popular attraction for tourists from across the world. It was intended as a compelling landscape feature to impress visitors.</string>
+    <string name="place_url_5">http://www.wonderslist.com/wp-content/uploads/2013/01/The-Dark-Hedges-Northern-Ireland.jpg</string>
+</resources>
