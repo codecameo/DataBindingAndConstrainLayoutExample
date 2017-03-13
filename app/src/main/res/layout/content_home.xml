@@ -2,17 +2,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
-
         <variable
             name="placeModel"
             type="bytes.wit.databinding.PlaceModel" />
 
         <variable
             name="eventCallBack"
-            type="bytes.wit.databinding.MainActivity.EventHandler" />
-
+            type="bytes.wit.databinding.HomeActivity.EventHandler"/>
+        <variable
+            name="color"
+            type="Integer" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -27,31 +27,30 @@
             android:id="@+id/iv_place"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="0dp"
             android:scaleType="centerCrop"
             app:imageUrl="@{placeModel.imageUrl}"
-            app:placeholder="@{@drawable/ic_launcher}"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder="@{@drawable/ic_launcher}" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.35" />
+            app:layout_constraintGuide_percent="0.35"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="239dp" />
 
         <TextView
             android:id="@+id/tv_place_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="Place"
             android:textSize="@dimen/abc_text_size_medium_material"
@@ -62,7 +61,7 @@
             android:id="@+id/tv_place_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="@{placeModel.placeName}"
             android:textSize="@dimen/abc_text_size_medium_material"
@@ -74,8 +73,9 @@
             android:id="@+id/btn_previous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="17dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:onClick="@{(view) -> eventCallBack.onPreviousClicked(view, placeModel)}"
             android:text="Previous"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -86,6 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:onClick="@{(view) -> eventCallBack.onNextClicked(view, placeModel)}"
             android:text="Next"
@@ -97,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="Description"
             android:textSize="@dimen/abc_text_size_medium_material"
@@ -108,9 +110,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginStart="16dp"
             android:ellipsize="end"
             android:maxLines="5"
             android:text="@{placeModel.placeDescription}"
@@ -121,5 +124,19 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_description_title" />
 
+        <bytes.wit.databinding.ColorPicker
+            android:id="@+id/color_picker"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            app:color="@={placeModel.color}"
+            app:onColorChange="@{(v, color) -> eventCallBack.onColorChanged(placeModel.color)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
 </layout>
+

@@ -1,17 +1,23 @@
 package bytes.wit.databinding;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
 /**
  * Created by Md. Sifat-Ul Haque on 3/8/2017.
  */
 
-public class PlaceModel {
+public class PlaceModel extends BaseObservable{
 
     private String placeName, placeDescription, imageUrl;
+    private int color;
 
-    public PlaceModel(String name, String description, String url){
+
+    public PlaceModel(String name, String description, String url, int color){
         placeName = name;
         imageUrl = url;
         placeDescription = description;
+        this.color = color;
     }
 
     public String getPlaceName() {
@@ -36,5 +42,15 @@ public class PlaceModel {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    @Bindable
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+        notifyPropertyChanged(BR.color);
     }
 }

@@ -20,4 +20,10 @@
     <string name="place_name_5">The Dark Hedges – Northern Ireland</string>
     <string name="place_description_5">This beautiful avenue of beech trees was planted by the Stuart family in the eighteenth century. The Dark Hedges is one of the most photographed natural phenomena in Northern Ireland and a popular attraction for tourists from across the world. It was intended as a compelling landscape feature to impress visitors.</string>
     <string name="place_url_5">http://www.wonderslist.com/wp-content/uploads/2013/01/The-Dark-Hedges-Northern-Ireland.jpg</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
