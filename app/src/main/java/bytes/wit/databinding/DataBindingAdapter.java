@@ -4,15 +4,21 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.databinding.BindingAdapter;
+import android.databinding.InverseBindingAdapter;
 import android.databinding.InverseBindingListener;
 import android.databinding.InverseBindingMethod;
 import android.databinding.InverseBindingMethods;
 import android.databinding.adapters.ListenerUtil;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v7.widget.AppCompatEditText;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -25,6 +31,12 @@ import com.squareup.picasso.Picasso;
                 attribute = "color",
                 method = "getColor")
 })
+
+/*,
+        @InverseBindingMethod(type = UserInfoModel.class,
+                attribute = "intInput",
+                method = "getAge")*/
+
 public class DataBindingAdapter {
 
     @BindingAdapter(value={"imageUrl", "placeholder"} , requireAll = true)
@@ -151,5 +163,45 @@ public class DataBindingAdapter {
             }
         });
         alpha.start();
+    }
+
+
+
+    //@BindingAdapter("app:input")
+    @BindingAdapter(value = {"input", "inputAttrChanged"}, requireAll = false)
+    public static void bindIntegerInText(AppCompatEditText tv, int value, final InverseBindingListener inverseBindingListener)
+    {
+        tv.setText(String.valueOf(value));
+        // Set the cursor to the end of the text
+        tv.setSelection(tv.getText().length());
+
+        tv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //inverseBindingListener.onChange();
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                inverseBindingListener.onChange();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //inverseBindingListener.onChange();
+            }
+        });
+    }
+
+    /*@InverseBindingAdapter(attribute = "android:text")
+    public static int getIntegerFromBinding(EditText view) {
+        String string = view.getText().toString();
+        return string.isEmpty() ? 0 : Integer.parseInt(string);
+    }*/
+
+    @InverseBindingAdapter(attribute = "app:input", event = "app:inputAttrChanged")
+    public static int bindCountryInverseAdapter(AppCompatEditText view) {
+        String string = view.getText().toString();
+        return string.isEmpty() ? 0 : Integer.parseInt(string);
     }
 }

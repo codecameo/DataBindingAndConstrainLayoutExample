@@ -44,7 +44,10 @@ public class UserInfoModel extends BaseObservable{
 
     public void setAge(int age) {
         Log.d("Age","Age "+age);
-        this.age = age;
-        notifyPropertyChanged(BR.age);
+        if (this.age != age){
+            this.age = age;
+            if (this.age != 0)
+            notifyPropertyChanged(BR.age);
+        }
     }
 }
